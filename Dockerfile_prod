@@ -1,0 +1,27 @@
+FROM node:22-bookworm-slim
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . /app/
+
+ARG APP_USER=app
+ARG APP_UID=1000
+# node image already has UID 1000 ("node"); reuse it or create APP_USER
+RUN if getent passwd "${APP_UID}" >/dev/null; then \
+      EXISTING="$(getent passwd "${APP_UID}" | cut -d: -f1)" && \
+      if [ "${EXISTING}" != "${APP_USER}" ]; then \
+        usermod -l "${APP_USER}" "${EXISTING}" && \
+        groupmod -n "${APP_USER}" "${EXISTING}" 2>/dev/null || true && \
+        usermod -d "/home/${APP_USER}" -m "${APP_USER}" 2>/dev/null || true; \
+      fi; \
+    else \
+      useradd -m -u "${APP_UID}" "${APP_USER}"; \
+    fi && \
+    chown -R "${APP_UID}:${APP_UID}" /app
+USER ${APP_UID}
+
+EXPOSE 3000
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "3000"]

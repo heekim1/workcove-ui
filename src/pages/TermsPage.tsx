@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
-import { COMPANY_LEGAL_NAME, PRIVACY_PATH, PRODUCT_NAME } from '../legal/urls'
+import {
+  COMPANY_ADDRESS,
+  COMPANY_LEGAL_NAME,
+  PRIVACY_PATH,
+  PRODUCT_NAME,
+} from '../legal/urls'
 
 export function TermsPage() {
   return (
@@ -37,22 +42,20 @@ export function TermsPage() {
           opportunity or offer notices, and related service updates from {PRODUCT_NAME} /{' '}
           {COMPANY_LEGAL_NAME}.
         </p>
-        <ul>
-          <li>Message frequency varies based on your account activity and job activity.</li>
-          <li>Message and data rates may apply.</li>
-          <li>
-            Reply <strong>STOP</strong> to opt out of Workcove SMS messages. Reply{' '}
-            <strong>HELP</strong> for help.
-          </li>
-          <li>
-            You can also manage SMS preferences by contacting us at{' '}
-            <a href="mailto:support@terarc-llc.com">support@terarc-llc.com</a>.
-          </li>
-          <li>Consent to receive SMS is not a condition of purchasing any goods or services.</li>
-        </ul>
+        <p>Message frequency varies based on your account activity and job activity.</p>
+        <p>Message and data rates may apply.</p>
         <p>
-          Carriers are not liable for delayed or undelivered messages. We may suspend messaging if
-          your number is unreachable or if required by law or carrier rules.
+          Reply <strong>STOP</strong> to opt out of Workcove SMS messages. Reply{' '}
+          <strong>HELP</strong> for help.
+        </p>
+        <p>
+          You can also manage SMS preferences by contacting us at{' '}
+          <a href="mailto:sales@terarc-llc.com">sales@terarc-llc.com</a>.
+        </p>
+        <p>Consent to receive SMS is not a condition of purchasing any goods or services.</p>
+        <p>
+          Wireless carriers are not liable for delayed or undelivered messages. We may suspend
+          messaging if your number is unreachable or if required by law or carrier rules.
         </p>
       </section>
 
@@ -102,11 +105,16 @@ export function TermsPage() {
       <section>
         <h2>9. Contact</h2>
         <p>
-          Questions about these Terms: <a href="mailto:legal@terarc-llc.com">legal@terarc-llc.com</a>{' '}
+          Questions about these Terms: <a href="mailto:sales@terarc-llc.com">sales@terarc-llc.com</a>{' '}
           ·{' '}
           <a href="https://www.terarc-llc.com/" target="_blank" rel="noreferrer">
             terarc-llc.com
           </a>
+        </p>
+        <p>
+          {COMPANY_LEGAL_NAME}
+          <br />
+          {COMPANY_ADDRESS}
         </p>
       </section>
     </article>

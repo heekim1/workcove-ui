@@ -15,7 +15,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </span>
             <span className="brand__text">
               <span className="brand__name">Workcove</span>
-              <span className="brand__byline">by Terarc</span>
+              <span className="brand__byline">a product of TERARC LLC</span>
             </span>
           </Link>
 
@@ -54,7 +54,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <footer className="site-footer">
         <div className="site-footer__inner">
-          <span>Workcove is a Terarc product</span>
+          <span>Workcove is a product of TERARC LLC</span>
           <nav className="site-footer__links" aria-label="Legal">
             <Link to={TERMS_PATH}>Terms &amp; Conditions</Link>
             <Link to={PRIVACY_PATH}>Privacy Policy</Link>

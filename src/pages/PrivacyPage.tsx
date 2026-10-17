@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
-import { COMPANY_LEGAL_NAME, PRODUCT_NAME, TERMS_PATH } from '../legal/urls'
+import {
+  COMPANY_ADDRESS,
+  COMPANY_LEGAL_NAME,
+  PRODUCT_NAME,
+  TERMS_PATH,
+} from '../legal/urls'
 
 export function PrivacyPage() {
   return (
@@ -98,10 +103,15 @@ export function PrivacyPage() {
         <h2>9. Contact</h2>
         <p>
           Privacy questions:{' '}
-          <a href="mailto:privacy@terarc-llc.com">privacy@terarc-llc.com</a> ·{' '}
+          <a href="mailto:sales@terarc-llc.com">sales@terarc-llc.com</a> ·{' '}
           <a href="https://www.terarc-llc.com/" target="_blank" rel="noreferrer">
             terarc-llc.com
           </a>
+        </p>
+        <p>
+          {COMPANY_LEGAL_NAME}
+          <br />
+          {COMPANY_ADDRESS}
         </p>
       </section>
     </article>
